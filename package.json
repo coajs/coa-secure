@@ -1,0 +1,27 @@
+{
+  "name": "coa-secure",
+  "version": "1.0.3",
+  "description": "secure component for coa",
+  "keywords": [
+    "coajs",
+    "coa",
+    "secure"
+  ],
+  "license": "MIT",
+  "author": "Aex",
+  "homepage": "https://github.com/coajs/coa-secure",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coajs/coa-secure.git"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "rm -rf dist && tsc && cp package.json dist",
+    "npm-publish": "yarn build && yarn version --patch && cp package.json README.md dist && cd dist && npm publish"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.0.5",
+    "typescript": "^3.9.3"
+  }
+}
