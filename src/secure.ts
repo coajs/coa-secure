@@ -6,6 +6,7 @@ type Dic<T> = { [key: string]: T }
 type Session = { [key: string]: string | string[] }
 
 const SESSION_SECRET = 'SESSION_SECRET_FOR_COA_FRAMEWORK'
+const HMAC_MD5_ID_SECRET = 'HMAC_MD5_ID_SECRET_FOR_COA_FRAMEWORK'
 
 export default new class {
 
@@ -15,6 +16,12 @@ export default new class {
 
   md5 (data: crypto.BinaryLike, digest: crypto.HexBase64Latin1Encoding = 'hex') {
     return crypto.createHash('md5').update(data).digest(digest)
+  }
+
+  md5Id (str: string) {
+    const hex = crypto.createHmac('md5', HMAC_MD5_ID_SECRET).update(str).digest('hex')
+    const result = 0xffffffffffffffffffffffffffffffffn + BigInt('0x' + hex)
+    return result.toString(36)
   }
 
   sha1_hmac (str: crypto.BinaryLike, key: string, digest: crypto.HexBase64Latin1Encoding = 'hex') {
