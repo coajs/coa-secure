@@ -18,8 +18,9 @@ export default new class {
     return crypto.createHash('md5').update(data).digest(digest)
   }
 
-  md5Id (str: string) {
-    const hex = crypto.createHmac('md5', HMAC_MD5_ID_SECRET).update(str).digest('hex')
+  md5Id (...values: string[]) {
+    const value = JSON.stringify(values)
+    const hex = crypto.createHmac('md5', HMAC_MD5_ID_SECRET).update(value).digest('hex')
     const result = 0xffffffffffffffffffffffffffffffffn + BigInt('0x' + hex)
     return result.toString(36)
   }

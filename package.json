@@ -1,6 +1,6 @@
 {
   "name": "coa-secure",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "secure component for coa",
   "keywords": [
     "coajs",
@@ -17,7 +17,8 @@
   "scripts": {
     "dev": "tsc -w",
     "build": "rm -rf dist && tsc && cp package.json dist",
-    "npm-publish": "yarn build && yarn version --patch && cp package.json README.md dist && cd dist && npm publish"
+    "npm-publish": "yarn build && yarn version --patch && cp package.json README.md dist && cd dist && npm publish",
+    "cnpm-sync": "cnpm sync"
   },
   "dependencies": {},
   "devDependencies": {
