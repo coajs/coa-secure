@@ -1,33 +1,4 @@
-# coa-secure
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/coa-secure.svg?style=flat-square)](https://www.npmjs.org/package/coa-secure)
-[![npm downloads](https://img.shields.io/npm/dm/coa-secure.svg?style=flat-square)](http://npm-stat.com/charts.html?package=coa-secure)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/coajs/coa-secure/pulls)
-
-
-## 描述
-
-- 常用的安全算法库
-- 主要配合 [coa-http](https://www.npmjs.com/package/coa-http) 使用
-
-## 特征
-
-- **零依赖** 不依赖任何第三方库 
-- **轻量** 只有一个文件
-- **TypeScript** 使用TypeScript开发，类型约束，IDE友好
-
-## 用法
-
-### 安装
-```shell
-yarn add coa-secure
-```
-> 注意：由于字符串压缩使用到zlib的brotli相关方法，建议使用Node.js 12以上版本 
-
-### 示例
-```ts
-import secure from 'coa-secure'
+import secure from './secure'
 
 // 计算sha1
 const sha1string = secure.sha1('ABC') // '3c01bdbb26f358bab27f267924aa2c9a03fcfdb8'
@@ -78,4 +49,3 @@ const session_encode_string2 = secure.session_encode({ id: 'A0001' }, 1 /*1毫�
 // session字符串数据解密
 const session_decode_data1 = secure.session_decode(session_encode_string1) // [Object] { id: 'A0001' }
 const session_decode_data2 = secure.session_decode(session_encode_string2) // null 已经过期，无法得到数据
-```

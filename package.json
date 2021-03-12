@@ -1,6 +1,6 @@
 {
   "name": "coa-secure",
-  "version": "1.0.6",
+  "version": "1.1.1",
   "description": "secure component for coa",
   "keywords": [
     "coajs",
@@ -22,7 +22,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^14.0.5",
-    "typescript": "^3.9.3"
+    "@types/node": "^14.14.33",
+    "typescript": "^4.2.3"
   }
 }
