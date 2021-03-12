@@ -27,7 +27,7 @@ yarn add coa-secure
 
 ### 示例
 ```ts
-import secure from 'coa-secure'
+import { secure } from 'coa-secure'
 
 // 计算sha1
 const sha1string = secure.sha1('ABC') // '3c01bdbb26f358bab27f267924aa2c9a03fcfdb8'
