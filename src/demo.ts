@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import secure from './secure'
 
 // 计算sha1
@@ -43,8 +44,8 @@ const brotli_decompress_string1 = secure.brotli_decompress(brotli_compress_strin
 const brotli_decompress_string2 = secure.brotli_decompress(brotli_compress_string2) // 'ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC-ABC'
 
 // session数据（一个普通对象）加密成一个简短的字符串
-const session_encode_string1 = secure.session_encode({ id: 'A0001' }, 60 * 60 * 1000 /*1小时后过期*/) // 'iwuAZGlLbG1MMTYxNTYxOTMyOWlkPUEwMDAxAw'
-const session_encode_string2 = secure.session_encode({ id: 'A0001' }, 1 /*1毫秒后过期*/) // 'iwuAZ0xhUG84MTYxNTUzMjkyOWlkPUEwMDAxAw'
+const session_encode_string1 = secure.session_encode({ id: 'A0001' }, 60 * 60 * 1000 /* 1小时后过期 */) // 'iwuAZGlLbG1MMTYxNTYxOTMyOWlkPUEwMDAxAw'
+const session_encode_string2 = secure.session_encode({ id: 'A0001' }, 1 /* 1毫秒后过期 */) // 'iwuAZ0xhUG84MTYxNTUzMjkyOWlkPUEwMDAxAw'
 
 // session字符串数据解密
 const session_decode_data1 = secure.session_decode(session_encode_string1) // [Object] { id: 'A0001' }
