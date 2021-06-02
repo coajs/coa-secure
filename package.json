@@ -18,7 +18,8 @@
     "dev": "tsc -w",
     "build": "rm -rf dist && tsc && cp package.json dist",
     "lint": "eslint .",
-    "prettier": "prettier -w ."
+    "prettier": "prettier -w .",
+    "sync": "curl -X PUT 'https://npm.taobao.org/sync/coa-secure?sync_upstream=true'"
   },
   "dependencies": {},
   "devDependencies": {
